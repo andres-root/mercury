@@ -47,7 +47,7 @@ class HTTPSudsPreprocessor(urllib.request.BaseHandler):
         req.add_header('Accept', 'gzip,deflate')
         req.add_header('Cache-Control', 'no-cache')
         req.add_header('Pragma', 'no-cache')
-        req.add_header('SOAPAction', '""    ')
+        req.add_header('SOAPAction', "http://localhost:8080/kestrel/AirService")
         req.add_header('Authorization', 'Basic %s' % (auth.decode('utf-8')))
         return req
 
