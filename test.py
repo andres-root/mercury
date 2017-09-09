@@ -45,5 +45,5 @@ URL = "https://americas.universal-api.travelport.com/B2BGateway/connect/uAPI/Air
 https = suds.transport.https.HttpTransport()
 opener = urllib.request.build_opener(HTTPSudsPreprocessor)
 https.urlopener = opener
-suds.client.Client(URL)
+suds.client.Client(URL, transport=https)
 # Client(URL, headers={'user': 'Universal API/uAPI5632685783-282e0d4d', 'password': 'xS!7K6d%3?', 'branch': 'P2916782 using 1G PCC 664M'})
