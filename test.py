@@ -74,6 +74,7 @@ class HTTPSudsPreprocessor(urllib.request.BaseHandler):
 
 URL = "https://americas.universal-api.travelport.com/B2BGateway/connect/uAPI/AirService"
 https = suds.transport.https.HttpTransport()
+import ipdb; ipdb.set_trace()
 opener = urllib.request.build_opener(HTTPSudsPreprocessor)
 https.urlopener = opener
 try:
