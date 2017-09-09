@@ -3,6 +3,16 @@ from django.contrib.auth.models import User
 
 
 class Package(models.Model):
+    SEGMENT_CHOICES = (
+        ('0', 'Ninguno'),
+        ('1', 'Turismo'),
+        ('2', 'Familia'),
+        ('3', 'Negocios'),
+        ('4', 'Aventura'),
+        ('5', 'Deporte'),
+        ('6', 'Festivales'),
+        ('7', 'Conferencias'),
+    )
     name = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(blank=True, null=True)
     origin = models.CharField(max_length=255, null=True, blank=True)
@@ -11,7 +21,7 @@ class Package(models.Model):
     departure_date = models.DateTimeField()
     return_date = models.DateTimeField()
     discount = models.CharField(max_length=255, null=True, blank=True)
-    segment = models.CharField(max_length=255, null=True, blank=True)
+    segment = models.CharField(max_length=255, choices=SEGMENT_CHOICES, null=True, blank=True)
     active = models.BooleanField(default=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
