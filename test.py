@@ -32,10 +32,10 @@ class HTTPSudsPreprocessor(urllib.request.BaseHandler):
         auth = base64.b64encode(b'Universal API/uAPI5632685783-282e0d4d:xS!7K6d%3?')
         req.add_header('Content-Type', 'text/xml; charset=utf-8')
         req.add_header('Accept', 'gzip,deflate')
-        req.add_header('Cache-Control','no-cache')
+        req.add_header('Cache-Control', 'no-cache')
         req.add_header('Pragma', 'no-cache')
         req.add_header('SOAPAction', 'LowFareSearchReq')
-        req.add_header('Authorization', 'Basic %s'%(auth))
+        req.add_header('Authorization', 'Basic %s' % (auth))
         return req
 
     https_request = http_request
@@ -45,5 +45,5 @@ URL = "https://americas.universal-api.travelport.com/B2BGateway/connect/uAPI/Air
 https = suds.transport.https.HttpTransport()
 opener = urllib.request.build_opener(HTTPSudsPreprocessor)
 https.urlopener = opener
-suds.client.Client(URL, transport=https)
+suds.client.Client(URL)
 # Client(URL, headers={'user': 'Universal API/uAPI5632685783-282e0d4d', 'password': 'xS!7K6d%3?', 'branch': 'P2916782 using 1G PCC 664M'})
