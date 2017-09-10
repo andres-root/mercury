@@ -1,0 +1,109 @@
+@media only screen and (min-width : 320px) {
+    .st-title {
+        color: #1EAEDB;
+        text-align: center;
+    }
+
+    .st-option {
+        padding: 10px;
+        border: 1px solid #cacaca;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .st-option-origin, p {
+        margin: 0;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+    }
+
+    .st-option-location > p{
+        width: 49%;
+    }
+
+    .st-option-date > p{
+        width: 49%;
+    }
+
+    .st-option-origin:after {
+        color: #918d8d;
+        font-family: 'icomoon';
+        content: "\E5C8";
+        position: absolute;
+        right: 49%;
+    }
+
+    .option-type {
+        color: #FFFFFF;
+        background: #000000;
+        padding: 3px;
+        border-radius: 2px;
+    }
+
+    .option-discount {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background: #000000;
+        width: 100px;
+        color: #FFFFFF;
+        text-align: right;
+        padding: 5px;
+    }
+
+    .st-option-price {
+        margin: 10px 0;
+    }
+
+    .st-option-price:before {
+        content: "\e636";
+        font-family: 'icomoon';
+        padding-right: 10px;
+    }
+
+    .st-option-cta {
+        text-align: center;
+    }
+
+    .option-discount:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 16px solid transparent;
+        border-left: 16px solid white;
+        border-bottom: 19px solid transparent;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+    .option-name {
+        margin-bottom: 0;
+    }
+
+    .st-option-price {
+        font-size: 29px;
+    }
+
+    .st-option-location {
+        margin: 1em;
+    }
+
+    .st-option-origin .st-option-destination {
+        font-size: 20px;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}

@@ -1,0 +1,9 @@
+.next-container {
+    text-align: center;
+}
+
+.next-container .cta-next {
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    width: 80%;
+}
