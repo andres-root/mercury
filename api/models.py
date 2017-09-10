@@ -5,13 +5,10 @@ from django.contrib.auth.models import User
 class Package(models.Model):
     SEGMENT_CHOICES = (
         ('0', 'Ninguno'),
-        ('1', 'Turismo'),
-        ('2', 'Familia'),
-        ('3', 'Negocios'),
-        ('4', 'Aventura'),
-        ('5', 'Deporte'),
-        ('6', 'Festivales'),
-        ('7', 'Conferencias'),
+        ('1', 'Vacaciones'),
+        ('2', 'Negocios'),
+        ('3', 'Aventura'),
+        ('4', 'Festivales'),
     )
     name = models.CharField(max_length=255, null=True, blank=True)
     description = models.TextField(blank=True, null=True)
