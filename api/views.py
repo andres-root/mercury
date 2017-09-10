@@ -18,7 +18,8 @@ def softmax(L):
 def index(request):
     if request.method == 'GET':
         ninguno = request.GET.get('ninguno', '0')
-        vacaciones = request.GET.get('vacaciones', '0')
+        vacaciones = '10'
+        # vacaciones = request.GET.get('vacaciones', '0')
         negocios = request.GET.get('negocios', '0')
         aventura = request.GET.get('aventura', '0')
         festivales = request.GET.get('festivales', '0')
