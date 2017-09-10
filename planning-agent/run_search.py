@@ -103,8 +103,18 @@ def main(p_choices, s_choices):
 
 def show_solution(node, elapsed_time):
     print("Plan length: {}  Time elapsed in seconds: {}".format(len(node.solution()), elapsed_time))
+    solutions = []
+    actions = {
+        'Load': 'Abordar',
+        'Fly': 'Vuela',
+        'Unload': 'Aterriza',
+    }
     for action in node.solution():
-        print("{}{}".format(action.name, action.args))
+        passenger = action.args[0]
+        action_name = actions[action.name]
+        plane = action.args[1]
+        airport = action.args[2]
+        print("Pasajero {0} {1} vuelo {2} en aeropuerto {3}".format(passenger, action_name, plane, airport))
 
 if __name__ == "__main__":
     main([3], [10])
