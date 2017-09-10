@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 import numpy as np
+import json
+
 from .models import Package
 
 
@@ -24,9 +26,15 @@ def index(request):
         vector_max = softmax(vector)
         index = vector_max.index(max(vector_max))
 
-        packages = Package.objects.filter(segment=index).values()
+        q_packages = Package.objects.filter(segment=index).values()
 
-        response = list(packages)
+        for p in q_packages:
+            p['departure_date'] = p['departure_date'].strftime('%d %b %Y a las %H:%M')
+            p['return_date'] = p['return_date'].strftime('%d %b %Y a las %H:%M')
+            p['date_created'] = p['date_created'].strftime('%d %b %Y a las %H:%M')
+            p['date_updated'] = p['date_updated'].strftime('%d %b %Y a las %H:%M')
+
+        response = list(q_packages)
     else:
         response = {'403': 'bad request'}
-    return JsonResponse(response, safe=True)
+    return JsonResponse(response, safe=False)
