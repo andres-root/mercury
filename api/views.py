@@ -18,16 +18,19 @@ def softmax(L):
 def index(request):
     if request.method == 'GET':
         ninguno = request.GET.get('ninguno', '0')
-        vacaciones = '10'
-        # vacaciones = request.GET.get('vacaciones', '0')
+        vacaciones = request.GET.get('vacaciones', '0')
         negocios = request.GET.get('negocios', '0')
         aventura = request.GET.get('aventura', '0')
         festivales = request.GET.get('festivales', '0')
         vector = [int(x) for x in [ninguno, vacaciones, negocios, aventura, festivales]]
         vector_max = softmax(vector)
+        vector_max_copy = softmax(vector)
         index = vector_max.index(max(vector_max))
+        vector_max_copy.remove(max(vector_max))
+        indexb = vector_max.index(max(vector_max_copy))
+        indexes = [index, indexb]
 
-        q_packages = Package.objects.filter(segment=index).values()
+        q_packages = Package.objects.filter(segment__in=indexes).values()
 
         for p in q_packages:
             p['departure_date'] = p['departure_date'].strftime('%d %b %Y a las %H:%M')
